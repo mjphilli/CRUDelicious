@@ -1,0 +1,14 @@
+@model List<Dish>
+
+<a asp-controller="Home" asp-action="NewDish">Add a Dish</a>
+
+@foreach (Dish dish in Model)
+{
+    <div class="card shadow rounded mx-auto w-75 mb-3">
+
+        <div class=card-body>
+            <p class="card-text"><a asp-controller="Home" asp-action="ViewDish" asp-route-id="@dish.DishId">@dish.Name</a> by @dish.Chef</p>
+        </div>
+
+    </div>
+}

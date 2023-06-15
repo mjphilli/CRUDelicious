@@ -1,0 +1,54 @@
+@model Dish
+
+@* <a asp-controller="Home" asp-action="Index">Home</a> *@
+
+<div class="container w-75 mx-auto">
+    <h2 class=text-center>New Dish</h2>
+
+    <form 
+    class="shadow p-3 rounded" 
+    asp-controller="Home" 
+    asp-action="CreateDish" 
+    method="POST">
+
+        <div class="mb-3">
+            <label asp-for="Chef"></label>
+            <span class="text-danger" asp-validation-for="Chef"></span>
+            <input asp-for="Chef" class="form-control">
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Name"></label>
+            <span class="text-danger font-weight-bold" asp-validation-for="Name"></span>
+            <input asp-for="Name" class="form-control">
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Calories"></label>
+            <span class="text-danger" asp-validation-for="Calories"></span>
+            <input asp-for="Calories" class="form-control">
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Tastiness"></label>
+            <span class="text-danger" asp-validation-for="Tastiness"></span>
+            <select asp-for="Tastiness" class="form-control">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Description"></label>
+            <span class="text-danger" asp-validation-for="Description"></span>
+            <input asp-for="Description" class="form-control">
+        </div>
+
+        <input type="submit" value="Add Dish">
+    </form>
+
+</div>
+
